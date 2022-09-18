@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+::selection {
+    background-color: #000C66;
+    color: #FFF;
+}
+body {
+    overflow: hidden;
+    background-color: #08106D;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23000c68' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+img {
+    user-select: none;
+}
+.container {
+    background-color: #FFFFFF;
+    width: 900px;
+    border-radius: 3px;
+    padding: 28px 0;
+}
+.task-input {
+    height: 52px;
+    padding: 0 25px;
+    position: relative;
+}
+.task-input img {
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translate(17px, -50%);
+}
+.task-input input {
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid #000C66;
+    outline: none;
+    padding: 0 20px 0 53px;
+}
+.task-input input::placeholder {
+    color: #ccc;
+}
+.controls {
+    padding: 18px 25px;
+    border-bottom: 1px solid #ccc;
+}
+.controls, li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filters span {
+    cursor: pointer;
+    margin: 0 20px;
+    font-size: 18px;
+}
+.filters span:first-child {
+    margin-left: 0;
+}
+.filters span.active {
+    background-color: #050A30;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 7px 13px;
+    transition: .3s ease;
+}
+.controls .clear {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #050A30;
+    color: #FFF;
+    padding: 7px 13px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+.controls .clear:hover {
+    background-color: #000C66;
+    transform: scale(1.1);
+}
+.task-box {
+    margin: 20px 25px;
+}
+.task-box .task {
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+}
+.task-box .task:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.task label {
+    display: flex;
+}
+.task label p.checked {
+    text-decoration: line-through;
+}
+.task label input {
+    margin-top: 0;
+    margin-right: 15px;
+}
+.task .settings {
+    cursor: pointer;
+    position: relative;
+}
+.settings .task-menu {
+    position: absolute;
+    right: -5px;
+    bottom: -65px;
+    background-color: #FFF;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    padding: 5px 0;
+    border-radius: 5px;
+    z-index: 2;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.5s;
+}
+.settings .task-menu.show {
+    transform: scale(1);
+}
+.task-menu li {
+    height: 25px;
+    font-size: 16px;
+    padding: 17px 15px;
+    margin-bottom: 2px;
+    justify-content: flex-start;
+}
+.task-menu li:last-child {
+    margin-bottom: 0;
+}
+.task-menu li:hover {
+    background-color: #F5F5F5;
+}
+.task-menu li i {
+    padding-right: 8px;
+}
+@media (max-width: 1100px) {
+    .container {
+        width: 95vw;
+    }
+}
